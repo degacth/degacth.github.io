@@ -15,7 +15,7 @@
         this.imagesLoaded = __bind(this.imagesLoaded, this);
         this.resize = __bind(this.resize, this);
         this.outlineWidth = 1;
-        this.outlineColor = '#fca000';
+        this.outlineColor = '#F5FE4B';
         this.active = -1;
         this.parent = document.getElementById(this.parentId);
         this.canvas = document.createElement('canvas');
@@ -48,7 +48,7 @@
 
       Puzzle.prototype.draw = function() {
         var index, tile, _i, _len, _ref;
-        this.ctx.fillStyle = "#ccc333";
+        this.ctx.fillStyle = this.outlineColor;
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         _ref = this.map;
         for (index = _i = 0, _len = _ref.length; _i < _len; index = ++_i) {

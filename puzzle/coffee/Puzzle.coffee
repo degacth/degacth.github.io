@@ -6,7 +6,7 @@ define [
   class Puzzle
     constructor: (@parentId, @grid, images) ->
       @outlineWidth = 1
-      @outlineColor = '#fca000'
+      @outlineColor = '#F5FE4B'
       @active = -1
 
       @parent = document.getElementById @parentId
@@ -38,7 +38,7 @@ define [
       @_initEvents()
 
     draw: =>
-      @ctx.fillStyle = "#ccc333";
+      @ctx.fillStyle = @outlineColor;
       @ctx.fillRect 0, 0, @canvas.width, @canvas.height
 
       @_drawTile tile, index for tile, index in @map
