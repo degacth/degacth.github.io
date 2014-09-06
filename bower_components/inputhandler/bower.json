@@ -1,0 +1,20 @@
+{
+  "name": "inputhandler",
+  "version": "1.0.0",
+  "homepage": "https://github.com/degacth/InputHandler",
+  "authors": [
+    "Alexander <degacth@yandex.ru>"
+  ],
+  "description": "touch device and mouse input handler",
+  "dependencies": {
+    "requirejs": "~2.1"
+  },
+  "main": "dist/InputHandler.js",
+  "keywords": [
+    "touch",
+    "mouse",
+    "input",
+    "handler"
+  ],
+  "license": "MIT"
+}
