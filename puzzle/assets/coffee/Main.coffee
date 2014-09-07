@@ -1,7 +1,7 @@
 require [
-  '/puzzle/coffee/Puzzle.js'
+  'assets/coffee/Puzzle.js'
 ], (Puzzle) ->
   new Puzzle 'puzzle', 3, [
     key: 'picture'
-    path: './images/scrooge.jpg'
+    path: 'images/scrooge.jpg'
   ]

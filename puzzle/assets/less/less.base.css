@@ -13,5 +13,5 @@ body #puzzle {
   width: 100%;
   overflow: hidden;
   text-align: center;
-  background-color: #f5fe4b;
+  background: url('../img/bg.png');
 }
