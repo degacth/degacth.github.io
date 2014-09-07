@@ -1,0 +1,146 @@
+.square(@size) {
+  width: @size;
+  height: @size;
+}
+
+.full-position(@position: 0) {
+  top:    @position;
+  bottom: @position;
+  left:   @position;
+  right:  @position;
+}
+
+.outline() { outline: 1px dotted #333 }
+.reset(@reset: 0) { margin: @reset; padding: @reset; }
+
+// Анимации
+.transition(@transition: all 0.4s ease) {
+  -webkit-transition: @transition;
+  -moz-transition:    @transition;
+  -ms-transition:     @transition;
+  -o-transition:      @transition;
+  transition:         @transition;
+}
+
+.transform(@property) {
+  transform:          @property;
+  -webkit-transform:  @property;
+  -o-transform:       @property;
+  -moz-transform:     @property;
+}
+
+.animation(@property) {
+  animation: @property;
+  -webkit-animation: @property;
+  -moz-animation: @property;
+  -o-animation: @property;
+}
+
+.scale(@scale) {
+  .transform(scale(@scale));
+}
+
+.rotate(@angle) {
+  .transform(rotate(@angle));
+}
+
+// Тени
+.box-shadow(@property) {
+  -webkit-box-shadow: @property;
+  box-shadow:         @property;
+}
+
+.text-shadow(@property) {
+  text-shadow: @property;
+}
+
+// Колонки и транкейты
+.columns(@count) {
+  -webkit-column-count:@count;
+  -moz-column-count:@count;
+  columns: @count;
+}
+
+.ellipsis() {
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+}
+
+// Круглые края
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.square-border-raduis(@tl:0, @tr:0, @br:0, @bl:0) {
+  -webkit-border-top-left-radius:     @tl;
+  -moz-border-radius-topleft:         @tl;
+  border-top-left-radius:             @tl;
+
+  -webkit-border-top-right-radius:    @tr;
+  -moz-border-radius-topright:        @tr;
+  border-top-right-radius:            @tr;
+
+  -webkit-border-bottom-right-radius: @br;
+  -moz-border-radius-bottomright:     @br;
+  border-bottom-right-radius:         @br;
+
+  -webkit-border-bottom-left-radius:  @bl;
+  -moz-border-radius-bottomleft:      @bl;
+  border-bottom-left-radius:          @bl;
+}
+
+// Работа с цветом
+.lighten-color(@color, @percent) {
+  .transition();
+  color: @color;
+
+  &:hover {
+    color: lighten(@color, @percent);
+  }
+}
+
+.lighten-bg(@color, @percent) {
+  .transition();
+  background-color: @color;
+
+  &:hover {
+    background-color: lighten(@color, @percent);
+  }
+}
+
+.hexRgba(@property, @hex, @opacity) {
+  @{property}: rgba(red(@hex), green(@hex), blue(@hex), @opacity);
+}
+
+.user-select(@value: none) {
+  -webkit-touch-callout:  @value;
+  -webkit-user-select:    @value;
+  -khtml-user-select:     @value;
+  -moz-user-select:       @value;
+  -ms-user-select:        @value;
+  user-select:            @value;
+}
+
+// Доработка UI-Kit
+.set-gutter(@val: 0px) {
+  .uk-grid {
+    &.uk-grid-small {
+      margin-left: -@val;
+    }
+    &.uk-grid-small > * {
+      padding-left: @val;
+    }
+    &.uk-grid-small + .uk-grid-small {
+      margin-top: @val;
+    }
+    &.uk-grid-small > .uk-grid-margin {
+      margin-top: @val;
+    }
+    &.uk-grid-small > * > .uk-panel + .uk-panel {
+      margin-top: @val;
+    }
+  }
+}

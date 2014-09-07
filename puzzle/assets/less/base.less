@@ -1,3 +1,5 @@
+@import "../../../bower_components/dmix/src/dmix";
+
 /* Colors */
 
 // primary
@@ -21,21 +23,67 @@
 @three-4: #F8FF78;
 @three-5: #FAFF9C;
 
-html, body {
-  width: 100%;
-  height: 100%;
-  margin:0;
-  padding:0;
-  border: 0;
+@settingMargin: 20px;
+
+body {
+  background: url('../img/bg.png');
+  color: darken(@prim-3, 10%);
 
   #puzzle {
     height: 100%;
-    width: 100%;
     overflow: hidden;
     text-align: center;
-    background: url('../img/bg.png');
+  }
+
+  .uk-icon-gear {
+    position: fixed;
+    top:  @settingMargin / 2;
+    left: @settingMargin / 2;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 20;
+    opacity: 0.5;
+
+    .transition();
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  #settings {
+    position: fixed;
+    top: @settingMargin;
+    left: 100%;
+    bottom: @settingMargin;
+    overflow: hidden;
+    width: 90%;
+    border: 5px solid @prim-5;
+
+    .hexRgba(background-color, @prim-5, 0.8);
+    .border-radius(@settingMargin);
+    .transition();
+
+    #settingsBlock {
+      height: 100%;
+      width: 100%;
+      margin: @settingMargin;
+
+      .transition();
+
+      .thumbnail {
+        .ranger-vertical {
+          float: left;
+        }
+
+        .images {
+          float: left;
+          margin-left: 50px;
+        }
+      }
+    }
+
+    &.show { left: 5% }
   }
 }
-
-
 

@@ -1,0 +1,24 @@
+{
+  "name": "dmix",
+  "homepage": "https://github.com/degacth/dmix",
+  "authors": [
+    "Alexander <degacth@yandex.ru>"
+  ],
+  "description": "Collection of LessCSS mixins",
+  "dependencies": {},
+  "main": "src/dmix.less",
+  "keywords": [
+    "LessCSS",
+    "mixins",
+    "CSS3"
+  ],
+  "_release": "2b35864608",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "2b3586460884fbd2ad83d221a4d461a5e74ab724"
+  },
+  "_source": "git://github.com/degacth/dmix.git",
+  "_target": "*",
+  "_originalSource": "dmix"
+}

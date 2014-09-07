@@ -1,15 +1,69 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" class="uk-height-1-1">
 <head>
     <meta charset="UTF-8">
     <title>Super Indie-logical game for small & stupid creatures</title>
+
+    <link rel="stylesheet" type="text/css" href="/bower_components/uikit/dist/css/uikit.almost-flat.min.css" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/Ranger/jquery.fs.ranger.css" />
+    <link rel="stylesheet" type="text/css" href="assets/less/less.base.css" />
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/uikit/dist/js/uikit.min.js"></script>
+
+    <script src="/bower_components/Ranger/jquery.fs.ranger.min.js"></script>
+
     <script data-main="" src="/bower_components/requirejs/require.js"></script>
     <script src="assets/coffee/require.config.js"></script>
     <script src="assets/coffee/Main.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="assets/less/less.base.css" />
 </head>
-<body>
+<body class="uk-height-1-1">
     <div id="puzzle"></div>
+
+    <span class="uk-icon-gear" data-uk-toggle="{target:'#settings', cls:'show'}"></span>
+
+    <div id="settings">
+        <div id="settingsBlock">
+            <div class="uk-container uk-container-center">
+                <div class="uk-grid">
+                    <div class="uk-width-1-1 uk-width-large-1-2 thumbnail">
+                        <input class="ranger" type="range" min="2" max="12" value="3" step="1" />
+
+                        <ul class="uk-list images">
+                            <li>lorem ip sum</li>
+                            <li>lorem ip sum</li>
+                            <li>lorem ip sum</li>
+                            <li>lorem ip sum</li>
+                            <li>lorem ip sum</li>
+                            <li>lorem ip sum</li>
+                        </ul>
+                    </div>
+                    <div class="uk-width-1-1 uk-width-large-1-2">
+                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci iure, quae. Adipisci
+                            corporis cupiditate ea error et eveniet ex fugiat harum ipsum nam, obcaecati, recusandae
+                            repudiandae saepe soluta voluptas! Adipisci.
+                        </div>
+                        <div>Animi aperiam architecto, beatae deleniti ducimus ex in minima molestiae nobis perspiciatis
+                            praesentium quibusdam quod sapiente veniam veritatis, voluptate voluptatibus? Aut ex
+                            exercitationem labore laudantium officiis omnis quasi quo voluptas.
+                        </div>
+                        <div>Ad aliquid, architecto beatae doloremque eligendi error eum, fugit hic inventore ipsa minus
+                            nobis omnis pariatur possimus quia quidem reiciendis reprehenderit rerum sapiente sunt
+                            tenetur voluptas voluptate, voluptatum. Ducimus, quis.
+                        </div>
+                        <div>A aspernatur, at commodi consequuntur cupiditate delectus, deserunt, et ex labore laborum
+                            laudantium maxime nam nulla perspiciatis provident quasi ratione repudiandae sapiente
+                            temporibus voluptas! A consequuntur corporis fuga in odit!
+                        </div>
+                        <div>Accusantium, asperiores consequuntur eligendi eum inventore magni soluta? A alias,
+                            assumenda distinctio dolor exercitationem expedita facere, fugit impedit placeat, provident
+                            quae suscipit totam ullam. At consequuntur dolorem exercitationem ipsum nisi?
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

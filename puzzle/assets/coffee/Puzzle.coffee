@@ -38,8 +38,7 @@ define [
       @_initEvents()
 
     draw: =>
-      @ctx.fillStyle = @outlineColor;
-      @ctx.fillRect 0, 0, @canvas.width, @canvas.height
+      @ctx.clearRect 0, 0, @canvas.width, @canvas.height
 
       @_drawTile tile, index for tile, index in @map
       if @active > -1 then @_drawTile @map[@active], @active, true

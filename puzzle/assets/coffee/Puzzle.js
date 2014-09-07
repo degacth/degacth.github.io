@@ -48,8 +48,7 @@
 
       Puzzle.prototype.draw = function() {
         var index, tile, _i, _len, _ref;
-        this.ctx.fillStyle = this.outlineColor;
-        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         _ref = this.map;
         for (index = _i = 0, _len = _ref.length; _i < _len; index = ++_i) {
           tile = _ref[index];

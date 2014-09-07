@@ -1,17 +1,65 @@
 /* Colors */
-html,
 body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  border: 0;
+  background: url('../img/bg.png');
+  color: #3b7511;
 }
-html #puzzle,
 body #puzzle {
   height: 100%;
-  width: 100%;
   overflow: hidden;
   text-align: center;
-  background: url('../img/bg.png');
+}
+body .uk-icon-gear {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 20;
+  opacity: 0.5;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+body .uk-icon-gear:hover {
+  opacity: 1;
+}
+body #settings {
+  position: fixed;
+  top: 20px;
+  left: 100%;
+  bottom: 20px;
+  overflow: hidden;
+  width: 90%;
+  border: 5px solid #c1fa99;
+  background-color: rgba(193, 250, 153, 0.8);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+body #settings #settingsBlock {
+  height: 100%;
+  width: 100%;
+  margin: 20px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+body #settings #settingsBlock .thumbnail .ranger-vertical {
+  float: left;
+}
+body #settings #settingsBlock .thumbnail .images {
+  float: left;
+  margin-left: 50px;
+}
+body #settings.show {
+  left: 5%;
 }
