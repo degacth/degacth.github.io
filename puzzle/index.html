@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Super Indie-logical game for small & stupid creatures</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi"/>
+
     <link rel="stylesheet" type="text/css" href="/bower_components/uikit/dist/css/uikit.almost-flat.min.css" />
     <link rel="stylesheet" type="text/css" href="/bower_components/Ranger/jquery.fs.ranger.css" />
     <link rel="stylesheet" type="text/css" href="assets/less/less.base.css" />
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/uikit/dist/js/uikit.min.js"></script>
-
     <script src="/bower_components/Ranger/jquery.fs.ranger.min.js"></script>
 
     <script data-main="" src="/bower_components/requirejs/require.js"></script>
@@ -22,44 +23,31 @@
     <div id="puzzle"></div>
 
     <span class="uk-icon-gear" data-uk-toggle="{target:'#settings', cls:'show'}"></span>
+    <span class="uk-icon-photo" data-uk-toggle="{target:'.uk-icon-photo', cls:'hide'}"></span>
 
     <div id="settings">
         <div id="settingsBlock">
             <div class="uk-container uk-container-center">
                 <div class="uk-grid">
                     <div class="uk-width-1-1 uk-width-large-1-2 thumbnail">
-                        <input class="ranger" type="range" min="2" max="12" value="3" step="1" />
+                        <div class="uk-grid">
+                            <div class="uk-width-1-10">
+                                <input class="ranger" type="range" min="2" max="12" value="3" step="1" />
+                            </div>
 
-                        <ul class="uk-list images">
-                            <li>lorem ip sum</li>
-                            <li>lorem ip sum</li>
-                            <li>lorem ip sum</li>
-                            <li>lorem ip sum</li>
-                            <li>lorem ip sum</li>
-                            <li>lorem ip sum</li>
-                        </ul>
+                            <div class="uk-width-9-10">
+                                <div class="image">
+                                    <span class="thumb-container">
+                                        <canvas id="thumbnail"></canvas>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="apply-button uk-display-block uk-width-1-1"> <i class="uk-icon-check"></i> </button>
                     </div>
                     <div class="uk-width-1-1 uk-width-large-1-2">
-                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci iure, quae. Adipisci
-                            corporis cupiditate ea error et eveniet ex fugiat harum ipsum nam, obcaecati, recusandae
-                            repudiandae saepe soluta voluptas! Adipisci.
-                        </div>
-                        <div>Animi aperiam architecto, beatae deleniti ducimus ex in minima molestiae nobis perspiciatis
-                            praesentium quibusdam quod sapiente veniam veritatis, voluptate voluptatibus? Aut ex
-                            exercitationem labore laudantium officiis omnis quasi quo voluptas.
-                        </div>
-                        <div>Ad aliquid, architecto beatae doloremque eligendi error eum, fugit hic inventore ipsa minus
-                            nobis omnis pariatur possimus quia quidem reiciendis reprehenderit rerum sapiente sunt
-                            tenetur voluptas voluptate, voluptatum. Ducimus, quis.
-                        </div>
-                        <div>A aspernatur, at commodi consequuntur cupiditate delectus, deserunt, et ex labore laborum
-                            laudantium maxime nam nulla perspiciatis provident quasi ratione repudiandae sapiente
-                            temporibus voluptas! A consequuntur corporis fuga in odit!
-                        </div>
-                        <div>Accusantium, asperiores consequuntur eligendi eum inventore magni soluta? A alias,
-                            assumenda distinctio dolor exercitationem expedita facere, fugit impedit placeat, provident
-                            quae suscipit totam ullam. At consequuntur dolorem exercitationem ipsum nisi?
-                        </div>
+                        <ul class="uk-grid uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-2 images"></ul>
                     </div>
                 </div>
             </div>

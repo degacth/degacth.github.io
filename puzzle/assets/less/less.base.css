@@ -8,10 +8,9 @@ body #puzzle {
   overflow: hidden;
   text-align: center;
 }
-body .uk-icon-gear {
+body .uk-icon-gear,
+body .uk-icon-photo {
   position: fixed;
-  top: 10px;
-  left: 10px;
   font-size: 32px;
   cursor: pointer;
   z-index: 20;
@@ -22,8 +21,17 @@ body .uk-icon-gear {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-body .uk-icon-gear:hover {
+body .uk-icon-gear:hover,
+body .uk-icon-photo:hover {
   opacity: 1;
+}
+body .uk-icon-gear {
+  top: 10px;
+  left: 10px;
+}
+body .uk-icon-photo {
+  bottom: 10px;
+  right: 10px;
 }
 body #settings {
   position: fixed;
@@ -32,11 +40,11 @@ body #settings {
   bottom: 20px;
   overflow: hidden;
   width: 90%;
-  border: 5px solid #c1fa99;
+  border: 3px solid #7fb956;
   background-color: rgba(193, 250, 153, 0.8);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
@@ -46,19 +54,70 @@ body #settings {
 body #settings #settingsBlock {
   height: 100%;
   width: 100%;
-  margin: 20px;
+  margin: 20px 0;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-body #settings #settingsBlock .thumbnail .ranger-vertical {
-  float: left;
+body #settings #settingsBlock .thumbnail .image {
+  background-color: rgba(161, 168, 25, 0.5);
 }
-body #settings #settingsBlock .thumbnail .images {
-  float: left;
-  margin-left: 50px;
+body #settings #settingsBlock .thumbnail .image .thumb-container {
+  display: block;
+  height: 320px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+body #settings #settingsBlock .thumbnail .apply-button {
+  border: 3px solid #7fb956;
+  padding: 5px;
+  margin-bottom: 8px;
+  text-align: center;
+  background-color: #51a118;
+  color: #fff;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+body #settings #settingsBlock .thumbnail .apply-button:hover {
+  background-color: #f5fe4b;
+  color: #51a118;
+}
+body #settings #settingsBlock .images li .image-button {
+  display: block;
+  border: 3px solid #7fb956;
+  padding: 5px;
+  margin-bottom: 8px;
+  text-align: center;
+  background-color: #51a118;
+  color: #fff;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+body #settings #settingsBlock .images li .image-button:hover {
+  background-color: #f5fe4b;
+  color: #51a118;
 }
 body #settings.show {
   left: 5%;

@@ -5,25 +5,43 @@
   define(['/bower_components/inputhandler/dist/InputHandler.js', '/bower_components/imagemanager/dist/ImageManager.js'], function(InputHandler, ImageManager) {
     var Puzzle;
     return Puzzle = (function() {
-      function Puzzle(parentId, grid, images) {
+      function Puzzle(parentId) {
         this.parentId = parentId;
-        this.grid = grid;
+        this.showThumbnail = __bind(this.showThumbnail, this);
         this.down = __bind(this.down, this);
         this.up = __bind(this.up, this);
         this.move = __bind(this.move, this);
         this.draw = __bind(this.draw, this);
-        this.imagesLoaded = __bind(this.imagesLoaded, this);
         this.resize = __bind(this.resize, this);
+        this.init = __bind(this.init, this);
         this.outlineWidth = 1;
         this.outlineColor = '#F5FE4B';
         this.active = -1;
+        this.imagePath = null;
         this.parent = document.getElementById(this.parentId);
         this.canvas = document.createElement('canvas');
         this.ctx = this.canvas.getContext('2d');
         this.input = new InputHandler(this.canvas);
-        this.im = new ImageManager(images);
-        this.im.load(this.imagesLoaded);
+        this.im = new ImageManager;
+        this._initEvents();
       }
+
+      Puzzle.prototype.init = function() {
+        if (!this.im.get(this.imagePath)) {
+          this.im.addImage(this.imagePath, this.imagePath);
+          return this.im.load(this.init);
+        }
+        this._initMap();
+        return this._initFullScreen();
+      };
+
+      Puzzle.prototype.setGrid = function(grid) {
+        return this.grid = grid;
+      };
+
+      Puzzle.prototype.setImagePath = function(path) {
+        return this.imagePath = path;
+      };
 
       Puzzle.prototype.resize = function() {
         var height, width;
@@ -38,12 +56,6 @@
       Puzzle.prototype.setSize = function() {
         this.size = Math.round(this.canvas.width / this.grid);
         return this.outlineWidth = Math.min(8, Math.round(this.size / 30));
-      };
-
-      Puzzle.prototype.imagesLoaded = function() {
-        this._initMap();
-        this._initFullScreen();
-        return this._initEvents();
       };
 
       Puzzle.prototype.draw = function() {
@@ -186,12 +198,12 @@
         return map;
       };
 
-      Puzzle.prototype._squareImage = function(img) {
-        var canvas, ctx, lenght;
+      Puzzle.prototype._squareImage = function() {
+        var canvas, ctx, img, lenght;
         canvas = document.createElement('canvas');
         canvas.width = canvas.height = this.canvas.width;
         ctx = canvas.getContext('2d');
-        img = this.im.get('picture');
+        img = this.im.get(this.imagePath);
         lenght = Math.min(img.width, img.height);
         ctx.drawImage(img, (img.width - lenght) / 2, (img.height - lenght) / 2, lenght, lenght, 0, 0, canvas.width, canvas.height);
         return this.img = canvas;

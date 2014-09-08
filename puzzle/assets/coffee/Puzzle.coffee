@@ -4,20 +4,31 @@ define [
 ], (InputHandler, ImageManager) ->
 
   class Puzzle
-    constructor: (@parentId, @grid, images) ->
+    constructor: (@parentId) ->
       @outlineWidth = 1
       @outlineColor = '#F5FE4B'
       @active = -1
+      @imagePath = null
 
       @parent = document.getElementById @parentId
 
       @canvas = document.createElement 'canvas'
       @ctx = @canvas.getContext '2d'
       @input = new InputHandler @canvas
+      @im = new ImageManager
 
-      @im = new ImageManager images
+      @_initEvents()
 
-      @im.load(@imagesLoaded)
+    init: =>
+      unless @im.get @imagePath
+        @im.addImage @imagePath, @imagePath
+        return @im.load @init
+
+      @_initMap()
+      @_initFullScreen()
+
+    setGrid: (grid) -> @grid = grid
+    setImagePath: (path) -> @imagePath = path
 
     resize: =>
       width  = @parent.width || @parent.clientWidth;
@@ -31,11 +42,6 @@ define [
     setSize: ->
       @size = Math.round @canvas.width / @grid
       @outlineWidth = Math.min 8, Math.round(@size / 30)
-
-    imagesLoaded: =>
-      @_initMap()
-      @_initFullScreen()
-      @_initEvents()
 
     draw: =>
       @ctx.clearRect 0, 0, @canvas.width, @canvas.height
@@ -64,7 +70,7 @@ define [
       @active = @_getIndexByCoords e
       @_resetActPos()
 
-    showThumbnail: ->
+    showThumbnail: =>
       @draw()
       @ctx.fillStyle = "rgba(0, 0, 0, .5)"
       @ctx.fillRect 0, 0, @canvas.width, @canvas.height
@@ -148,12 +154,12 @@ define [
 
       map
 
-    _squareImage: (img) ->
+    _squareImage: () ->
       canvas = document.createElement 'canvas'
       canvas.width = canvas.height = @canvas.width
       ctx = canvas.getContext '2d'
 
-      img = @im.get 'picture'
+      img = @im.get @imagePath
       lenght = Math.min img.width, img.height
 
       ctx.drawImage img,

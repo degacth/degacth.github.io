@@ -24,10 +24,31 @@
 @three-5: #FAFF9C;
 
 @settingMargin: 20px;
+@borderRadius: 6px;
+@border: 3px solid @prim-2;
 
 body {
   background: url('../img/bg.png');
   color: darken(@prim-3, 10%);
+
+  .button() {
+    border: @border;
+    padding: 5px;
+    margin-bottom: 8px;
+    text-align: center;
+    background-color: @prim-3;
+    color: #fff;
+    cursor: pointer;
+
+    .ellipsis();
+    .border-radius(@borderRadius);
+    .transition();
+
+    &:hover {
+      background-color: @three-1;
+      color: @prim-3;
+    }
+  }
 
   #puzzle {
     height: 100%;
@@ -35,10 +56,8 @@ body {
     text-align: center;
   }
 
-  .uk-icon-gear {
+  .uk-icon-gear, .uk-icon-photo {
     position: fixed;
-    top:  @settingMargin / 2;
-    left: @settingMargin / 2;
     font-size: 32px;
     cursor: pointer;
     z-index: 20;
@@ -51,6 +70,16 @@ body {
     }
   }
 
+  .uk-icon-gear {
+    top:  @settingMargin / 2;
+    left: @settingMargin / 2;
+  }
+
+  .uk-icon-photo {
+    bottom:  @settingMargin / 2;
+    right: @settingMargin / 2;
+  }
+
   #settings {
     position: fixed;
     top: @settingMargin;
@@ -58,27 +87,43 @@ body {
     bottom: @settingMargin;
     overflow: hidden;
     width: 90%;
-    border: 5px solid @prim-5;
+    border: @border;
 
     .hexRgba(background-color, @prim-5, 0.8);
-    .border-radius(@settingMargin);
+    .border-radius(@borderRadius);
     .transition();
 
     #settingsBlock {
       height: 100%;
       width: 100%;
-      margin: @settingMargin;
+      margin: @settingMargin 0;
 
       .transition();
 
       .thumbnail {
-        .ranger-vertical {
-          float: left;
+        .image {
+          .hexRgba(background-color, @three-3, .5);
+          
+          .thumb-container {
+            display: block;
+            height: 320px;
+            text-align: center;
+            margin-bottom: 20px;
+          }
         }
 
-        .images {
-          float: left;
-          margin-left: 50px;
+        .apply-button {
+          .button();
+        }
+      }
+      
+      .images {
+        li {
+          .image-button {
+            display: block;
+
+            .button()
+          }
         }
       }
     }
